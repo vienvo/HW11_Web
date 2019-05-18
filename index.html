@@ -1,146 +1,97 @@
+<!DOCTYPE html>
 
-<!doctype html>
 <html lang="en">
+
 <head>
-    <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
+<!-- Create Website Name -->
+  <meta charset="UTF-8">
+  <title>Bootstrap Visualization Dashboard</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Summary Page</title>
-  <style>
-
-.jumbotron{
-  background-color:darkgray;
-  color:black;
-}
-
-.footer {
-  bottom: 0;
-  width: 100%;
-  height: 35px;
-  /* background-color: #5bc0de; */
-  background-color:#143047;
-  color:white;
-  text-align:center;
-}
-
-
-/* https://mdbootstrap.com/support/general/how-to-change-text-color-during-hovering-dropdown-menu-items/ */
-
-.dropdown-menu a{
-  color: white !important;
-  background-color:#143047;
-}
-
-.dropdown-menu a:hover{
-  background: #143047!important;
-
-  background: linear-gradient(left, rgb(17, 51, 78), #143047);
-  background: -moz-linear-gradient(left, rgb(17, 51, 78), #143047)!important;
-  background: -webkit-gradient(linear, 100% 100%, 0% 0%, from(rgb(17, 51, 78)), to(#143047))!important; 
-
-  /* color: #f8f9fa !important; */
-color: white !important;
-}
-
-</style>
+<!-- Import necessary modules -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Import style modules -->
+  <link rel="stylesheet" href="Style/style.css">
 </head>
 
-
-
 <body>
-    <div class = "container">
-        <nav class="navbar navbar-dark bg-secondary navbar-expand-lg">
-            <a class="navbar-brand" href="#">
-               <h1>Latitude</h1>
-            </a>
-
-            <!-- This button collapses the links for Plot, Comparison and Data into a burger menu -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto"> </ul>
-                <span class="navbar-text">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle bg-secondary" type="button" 
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Plots
-                                </button>
-                                <div class="dropdown-menu btn-secondary">
-                                    <a class="dropdown-item" href="temp_page.html">Max Temperature</a>
-                                    <a class="dropdown-item" href="humidity_page.html">Humidity</a>
-                                    <a class="dropdown-item" href="cloud_page.html">Cloudiness</a>
-                                    <a class="dropdown-item" href="wind_page.html">Wind Speed</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="comparison_page.html">Comparison</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" href="maps_page.html">Weather Maps</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="data_page.html">Data</a>
-                        </li>
-                    </ul>
-                </span>
+<!-- Create Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Latitude</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <!-- Drop Down List -->
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plots</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Cloudiness</a>
+              <a class="dropdown-item" href="#">Humidity</a>
+              <a class="dropdown-item" href="#">Max Temperature</a>
+              <a class="dropdown-item" href="#">Wind Speed</a>
             </div>
-        </nav>
-    </div>
+          </li>
+          <!-- Regular Links -->
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Comparison</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Weather Maps</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Data</a>
+          </li>
+        </ul>
+        </div>
+    </nav>
 
-
-
+    <!-- Create row and column for homepage -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-sm-12 col-xs-12">
+            <div class="col-lg-7">
                 <div class="jumbotron">
-                    <h1>Summary: Weather vs. Latitude</h1>
-                    <img class = "image-wrapper float-left pr-3" src="Instructions\Resources\assets\images\temp_map.png" style="width:50%; float: left; margin: 5px;" alt="">
-                    
-                    <p> In this project we display several weather parameters as a function of Latitude. We created visualizations for Maximum Temperature, 
-                        Humidity, Cloudiness and Wind Speed against Latitude. We used a Python script combined with the open source OpenWeather Map 
-                        API to query data for over 500 cities around the world. Then we created plots using Matplotlib to show the relationship
-                        between each weather observation and Latitude. The visualizations shown here are data measurements on Mar 23, 2019.
-                    </p>
-
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-sm-12 col-xs-12">
-                <div class="jumbotron">
-                    <h1>Visualizations</h1>
+                    <h2>Summary: Latitude vs. X</h2>
+                    <hr>
                     <div class="row">
-                        <div class="col-lg-6 col-sm-3 col-xs-6"><a href="temp_page.html"><img class="img-thumbnail img-fluid" src="Instructions\Resources\assets\images\tmax.png" alt=""></a></div>
-                        <div class="col-lg-6 col-sm-3 col-xs-6"><a href="humidity_page.html"><img class="img-thumbnail img-fluid" src="Instructions\Resources\assets\images\humidity.png" alt=""></a></div>
-                        <div class="col-lg-6 col-sm-3 col-xs-6"><a href="cloud_page.html"><img class="img-thumbnail img-fluid" src="Instructions\Resources\assets\images\clouds.png" alt=""></a></div>
-                        <div class="col-lg-6 col-sm-3 col-xs-6"><a href="wind_page.html"><img class="img-thumbnail img-fluid" src="Instructions\Resources\assets\images\windspeed.png" alt=""></a></div>
+                        <div class="col-lg-7"><img src="Resources/assets/images/Fig1.png" class="img-fluid" alt="Latitude vs. Max Temperature"></div>
+                        <div class="col-lg-5">
+                            <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <br>
+                            <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude.  Factors we looked at included: temperature, cloudiness, wind speed, and humidity.  This site provides the source data and visualizations created as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-xs-1"></div>
+            <div class="col-lg-4">
+                <div class="jumbotron">
+                    <h2>Visualizations</h2>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-6"><img src="Resources/assets/images/Fig1.png" class="img-fluid" alt="Latitude vs. Max Temperature"></div>
+                        <div class="col-lg-6"><img src="Resources/assets/images/Fig2.png" class="img-fluid"  alt="Latitude vs. Humidity"></div>
+                        <div class="col-lg-6"><img src="Resources/assets/images/Fig3.png" class="img-fluid"  alt="Latitude vs. Cloudiness"></div>
+                        <div class="col-lg-6"><img src="Resources/assets/images/Fig4.png" class="img-fluid"  alt="Latitude vs. Wind Speed"></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-
-
-
-    <div class = "container">
-        <div class="footer" >Prepared by:
-            <a href="https://github.com/vienvo" style="color: white"> Vien Vo </a>
-        </div>
-    </div>
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
+<footer class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a target="_blank" href="https://github.com/vienvo/HW11_Web"> Vien Vo</a>
+    </div>
+</footer>
+    
+</html>
